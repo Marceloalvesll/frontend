@@ -1,0 +1,92 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="isMenuOpen">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/perfil">Perfil</a>
+        <a mat-list-item routerLink="/perfil/edit">Editar Dados</a>
+        <a mat-list-item routerLink="/perfil/pedidos">Pedidos Realizados</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button mat-icon-button (click)="toggleSidebar()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Cadastro de Endereço</span>
+      </mat-toolbar>
+      <div class="form-container">
+  
+        <!-- <mat-card>
+          <mat-card-content>
+            <form [formGroup]="formGroup">
+              <mat-form-field appearance="outline">
+                <mat-label>Rua</mat-label>
+                <input matInput formControlName="rua" />
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>Número</mat-label>
+                <input matInput formControlName="numero" />
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>Cidade</mat-label>
+                <input matInput formControlName="cidade" />
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>Estado</mat-label>
+                <input matInput formControlName="estado" />
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline">
+                <mat-label>CEP</mat-label>
+                <input matInput formControlName="cep" />
+              </mat-form-field>
+  
+              <button mat-raised-button color="primary" (click)="salvarEndereco()">
+                Salvar
+              </button>
+              <button mat-raised-button color="warn" (click)="excluirEndereco()">
+                Excluir
+              </button>
+            </form>
+          </mat-card-content>
+        </mat-card> -->
+  
+        <mat-card>
+          <mat-card-title>Adicionar Endereço</mat-card-title>
+          <mat-card-content>
+            <form [formGroup]="formGroup" (ngSubmit)="salvarEndereco()">
+              <mat-form-field appearance="fill">
+                <mat-label>Rua</mat-label>
+                <input matInput formControlName="rua" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Número</mat-label>
+                <input matInput formControlName="numero" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Cidade</mat-label>
+                <input matInput formControlName="cidade" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>Estado</mat-label>
+                <input matInput formControlName="estado" required>
+              </mat-form-field>
+  
+              <mat-form-field appearance="fill">
+                <mat-label>CEP</mat-label>
+                <input matInput formControlName="cep" required>
+              </mat-form-field>
+  
+              <button mat-raised-button color="primary" type="submit">Salvar</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+  
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

@@ -1,0 +1,30 @@
+<div class="checkout-container">
+  <h1>Checkout</h1>
+  <div *ngIf="clienteLogado; else loginMessage">
+    <div *ngIf="carrinhoItens.length > 0; else carrinhoVazio">
+      <div class="carrinho-itens">
+        <div *ngFor="let item of carrinhoItens" class="carrinho-item">
+          
+          <div class="carrinho-detalhes">
+            <h3>{{ item.nome }}</h3>
+            <p>Preço: {{ item.preco }}</p>
+            <p>Quantidade: {{ item.quantidade }}</p>
+            <p>Total: {{ item.quantidade * item.preco | currency }}</p>
+          </div>
+        </div>
+      </div>
+      <p class="carrinho-total">Total do Carrinho: {{ totalCarrinho | currency }}</p>
+      
+      <div class="checkout-buttons">
+        <button mat-raised-button color="primary" (click)="onCheckout()">Finalizar Compra</button>
+        <button mat-raised-button color="accent" (click)="continuarComprando()">Continuar Comprando</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #loginMessage>
+    <p>Por favor, faça login para continuar com o checkout.</p>
+  </ng-template>
+  <ng-template #carrinhoVazio>
+    <p>O carrinho está vazio.</p>
+  </ng-template>
+</div>

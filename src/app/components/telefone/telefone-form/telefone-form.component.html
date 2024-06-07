@@ -1,0 +1,62 @@
+<mat-toolbar color="primary" class="toolbar-title">Cadastro de Telefone</mat-toolbar>
+<div class="form-container">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="formGroup">
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Numero</mat-label>
+                    <input matInput type="text" formControlName="numero">
+                    <mat-error *ngIf="formGroup.get('numero') 
+                                   && formGroup.get('numero')?.invalid
+                                   && formGroup.get('numero')?.touched">
+                        O numero é obrigatorio.
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Codido Area</mat-label>
+                    <input matInput type="text" formControlName="codigoArea">
+                    <mat-error *ngIf="formGroup.get('codigoArea') 
+                                   && formGroup.get('codigoArea')?.invalid
+                                   && formGroup.get('codigoArea')?.touched">
+                        O codigo de area é obrigatorio.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Operadora</mat-label>
+                    <input matInput type="text" formControlName="operadora">
+                    <mat-error *ngIf="formGroup.get('operadora') 
+                                   && formGroup.get('operadora')?.invalid
+                                   && formGroup.get('operadora')?.touched">
+                        A operadora é obrigatorio.
+                    </mat-error>
+                </mat-form-field>
+
+
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button 
+                   
+                    (click)="salvar()"
+                    [disabled]="formGroup.invalid"> 
+                Salvar 
+            </button>
+            <button mat-raised-button 
+                    *ngIf="formGroup?.get('id')?.value"
+                   
+                    (click)="excluir()"
+                    [disabled]="formGroup.invalid"> 
+                Excluir 
+            </button>
+            <button mat-raised-button  
+                    routerLink="/telefones"> 
+                Cancelar 
+            </button>
+
+        </mat-card-actions>
+    </mat-card>
+</div>

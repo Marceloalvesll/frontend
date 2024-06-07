@@ -1,0 +1,108 @@
+.carrinho-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .carrinho-item {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+  
+  .carrinho-imagem {
+    max-width: 100px;
+    margin-right: 20px;
+  }
+  
+  .carrinho-detalhes {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .carrinho-detalhes h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+  }
+  
+  .carrinho-detalhes p {
+    margin: 5px 0;
+  }
+  
+  .carrinho-total {
+    font-size: 1.4em;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
+  .carrinho-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .carrinho-buttons button {
+    margin: 5px;
+  }
+  
+  .empty-cart {
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 20px;
+  }
+    
+    .carrinho-buttons button {
+        margin: 5px;
+        background: #3CB371 !important;
+        font-family: "Montserrat", sans-serif;
+        color: white !important;
+        transition: background 0.3s;
+        border: none;
+        border-radius:  3px;
+        margin: 5px;
+        padding: 15px 25px;
+        font-size: 1.1em;
+        min-width: 150px;
+    }
+
+    .carrinho-buttons button:hover {
+        background: #2E8B57 !important;
+    }
+
+    .carrinho-item button {
+      background: #DC143C !important;
+      font-family: "Montserrat", sans-serif;
+      color: white !important;
+      transition: background 0.3s;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .carrinho-item button:hover {
+        background: #a4102e !important;
+    }
+
+    .icones-controle-container {
+        display: flex;
+        gap: 10px;
+        margin: 10px 0;
+        
+      }
+      
+      .icones-controle {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
